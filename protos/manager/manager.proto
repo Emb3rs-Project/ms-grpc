@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "manager/models/manager-responses.proto";
+
+package manager;
+
+
+service ManagerModule {
+    // Manager Module for Emb3rs Project
+
+    // Starts a simulation
+    rpc StartSimulation (StartSimulationRequest) returns (StartSimulationResponse) {}
+
+    // Starts a Characterization 2
+    rpc StartCharacterization (StartCharacterizationRequest) returns (StartCharacterizationResponse) {}
+}   
+ 
+
+
