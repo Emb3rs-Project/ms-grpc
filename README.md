@@ -35,3 +35,13 @@ if still not enough, check at the links below for more information.
 - zsh or bash script (zsh example)
 
         $ zsh -i generate_php.sh protos/manager/manager.proto
+
+## Running tests
+
+server test
+
+        PYTHONPATH=$PYTHONPATH:plibs python test_server.py
+
+client test
+
+        PYTHONPATH=$PYTHONPATH:plibs python test_client.py
