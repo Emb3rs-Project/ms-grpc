@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package market;
+
+service MarketModule {
+  rpc RunShortTermMarket (MarketInput) returns (MarketOutput);
+  rpc RunLongTermMarket (MarketInput) returns (MarketOutput);
+}
+
+message MarketInput {
+  string input = 1;
+}
+
+message MarketOutput {
+  string Gn = 1;
+  string Ln = 2;
+  string Pn = 3;
+  string QoE = 4;
+  bool optimal = 5;
+  string plot_market_clearing = 6;
+  string settlement = 7;
+  string social_welfare_h = 8;
+  string shadow_price = 9;
+  string Tnm = 10;
+  string agent_operational_cost = 11;
+}

@@ -23,3 +23,17 @@ grpc_request = StartSimulationRequest(
 a.from_grpc(grpc_request)
 
 print(a)
+
+print(type([]).__name__)
+
+b = [1, 2, 3, { "a" : 2}, 5, 6]
+b_j = jsonpickle.encode(b, unpicklable=True)
+
+print(type(b_j).__name__)
+print(b_j)
+
+c: list = []
+c = jsonpickle.decode(b_j)
+
+print(type(c).__name__)
+print(c)
