@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13market/market.proto\x12\x06market\"\x1c\n\x0bMarketInput\x12\r\n\x05input\x18\x01 \x01(\t\"\x1f\n\x0cMarketOutput\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t2\x8f\x01\n\x0cMarketModule\x12?\n\x12RunShortTermMarket\x12\x13.market.MarketInput\x1a\x14.market.MarketOutput\x12>\n\x11RunLongTermMarket\x12\x13.market.MarketInput\x1a\x14.market.MarketOutputb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13market/market.proto\x12\x06market\"\x1c\n\x0bMarketInput\x12\r\n\x05input\x18\x01 \x01(\t\"\xdf\x01\n\x0cMarketOutput\x12\n\n\x02Gn\x18\x01 \x01(\t\x12\n\n\x02Ln\x18\x02 \x01(\t\x12\n\n\x02Pn\x18\x03 \x01(\t\x12\x0b\n\x03QoE\x18\x04 \x01(\t\x12\x0f\n\x07optimal\x18\x05 \x01(\x08\x12\x1c\n\x14plot_market_clearing\x18\x06 \x01(\t\x12\x12\n\nsettlement\x18\x07 \x01(\t\x12\x18\n\x10social_welfare_h\x18\x08 \x01(\t\x12\x14\n\x0cshadow_price\x18\t \x01(\t\x12\x0b\n\x03Tnm\x18\n \x01(\t\x12\x1e\n\x16\x61gent_operational_cost\x18\x0b \x01(\t2\x8f\x01\n\x0cMarketModule\x12?\n\x12RunShortTermMarket\x12\x13.market.MarketInput\x1a\x14.market.MarketOutput\x12>\n\x11RunLongTermMarket\x12\x13.market.MarketInput\x1a\x14.market.MarketOutputb\x06proto3')
 
 
 
@@ -40,8 +40,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   _MARKETINPUT._serialized_start=31
   _MARKETINPUT._serialized_end=59
-  _MARKETOUTPUT._serialized_start=61
-  _MARKETOUTPUT._serialized_end=92
-  _MARKETMODULE._serialized_start=95
-  _MARKETMODULE._serialized_end=238
+  _MARKETOUTPUT._serialized_start=62
+  _MARKETOUTPUT._serialized_end=285
+  _MARKETMODULE._serialized_start=288
+  _MARKETMODULE._serialized_end=431
 # @@protoc_insertion_point(module_scope)
