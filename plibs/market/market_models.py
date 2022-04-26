@@ -2,6 +2,7 @@ from typing import Dict, Any
 from pydantic import Field
 from base.BaseGRPC import BaseGRPC
 
+
 class MarketOutputModel(BaseGRPC):
     Gn: list = Field(default=[])
     Ln: list = Field(default=[])

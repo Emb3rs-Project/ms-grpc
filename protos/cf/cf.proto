@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package cf;
+
+service CFModule {
+
+  // Simulation Convert Sink
+  rpc convert_sink(PlatformOnlyInput) returns (ConvertSinkOutput);
+  // Simulation Convert Sources
+  rpc convert_source(ConvertSourceInput) returns (ConvertSourceOutput);
+  // Simulation Convert Pinch
+  rpc convert_pinch(PlatformOnlyInput) returns (ConvertPinchOutput);
+  // Simulation Convert ORC
+  rpc convert_orc(PlatformOnlyInput) returns (ConvertOrcOutput);
+
+  // Characterization Detailed
+  //  rpc char_detailed(CharacterizationInput) returns (CharacterizationSourceOutput);
+  
+  // Characterization Simple
+  rpc char_simple(CharacterizationInput) returns (CharacterizationSourceOutput);
+  // Characterization Building
+  rpc char_building(CharacterizationInput) returns (CharacterizationSinkOutput);
+  // Characterization Greenhouse
+  rpc char_greenhouse(CharacterizationInput) returns (CharacterizationSinkOutput);
+}
+
+message PlatformOnlyInput {
+  string platform = 1;
+}
+
+message CharacterizationInput {
+  string platform = 1;
+}
+
+message ConvertSinkOutput {
+  string all_sinks_info = 1;
+  string n_demand_list = 2;
+  string teo_demand_factor_group = 3;
+}
+
+message ConvertSourceInput {
+  string group_of_sources = 1;
+  string sink_group_grid_supply_temperature = 2;
+  string sink_group_grid_return_temperature = 3;
+}
+
+message ConvertSourceOutput {
+  string all_sources_info = 1;
+  string teo_string = 2;
+  string input_fuel = 3;
+  string output_fuel = 4;
+  string output = 5;
+  string input = 6;
+  string n_supply_list = 7;
+  string teo_capacity_factor_group = 8;
+  string teo_dhn = 9;
+}
+
+message ConvertPinchOutput {
+  string co2_optimization = 1;
+  string energy_recovered_optimization = 2;
+  string energy_investment_optimization = 3;
+}
+
+message ConvertOrcOutput {
+  string best_options = 1;
+}
+
+message CharacterizationSinkOutput {
+  optional string hot_stream = 1;
+  optional string cold_stream = 2;
+}
+
+message CharacterizationSourceOutput {
+  string streams = 1;
+}
