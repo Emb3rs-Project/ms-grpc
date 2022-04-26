@@ -13,7 +13,7 @@ _dict = {
 
 inputs = {
     "simulation_uuid": 'xpto',
-    "simulation_metadata": jsonpickle.encode(_dict, unpicklable=True)
+    "simulation_metadata": jsonpickle.encode(_dict, unpicklable=False)
 }
 
 grpc_request = StartSimulationRequest(
@@ -26,8 +26,8 @@ print(a)
 
 print(type([]).__name__)
 
-b = [1, 2, 3, { "a" : 2}, 5, 6]
-b_j = jsonpickle.encode(b, unpicklable=True)
+b = [1, 2, 3, {"a": 2}, 5, 6]
+b_j = jsonpickle.encode(b, unpicklable=False)
 
 print(type(b_j).__name__)
 print(b_j)

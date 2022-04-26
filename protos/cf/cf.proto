@@ -14,23 +14,21 @@ service CFModule {
   rpc convert_orc(PlatformOnlyInput) returns (ConvertOrcOutput);
 
   // Characterization Detailed
-  //  rpc char_detailed(CharacterizationInput) returns (CharacterizationSourceOutput);
+  //  rpc char_detailed(CharacterizationInput) returns
+  //  (CharacterizationSourceOutput);
 
   // Characterization Simple
   rpc char_simple(CharacterizationInput) returns (CharacterizationSourceOutput);
   // Characterization Building
   rpc char_building(CharacterizationInput) returns (CharacterizationSinkOutput);
   // Characterization Greenhouse
-  rpc char_greenhouse(CharacterizationInput) returns (CharacterizationSinkOutput);
+  rpc char_greenhouse(CharacterizationInput)
+      returns (CharacterizationSinkOutput);
 }
 
-message PlatformOnlyInput {
-  string platform = 1;
-}
+message PlatformOnlyInput { string platform = 1; }
 
-message CharacterizationInput {
-  string platform = 1;
-}
+message CharacterizationInput { string platform = 1; }
 
 message ConvertSinkOutput {
   string all_sinks_info = 1;
@@ -62,15 +60,11 @@ message ConvertPinchOutput {
   string energy_investment_optimization = 3;
 }
 
-message ConvertOrcOutput {
-  string best_options = 1;
-}
+message ConvertOrcOutput { string best_options = 1; }
 
 message CharacterizationSinkOutput {
   optional string hot_stream = 1;
   optional string cold_stream = 2;
 }
 
-message CharacterizationSourceOutput {
-  string streams = 1;
-}
+message CharacterizationSourceOutput { string streams = 1; }

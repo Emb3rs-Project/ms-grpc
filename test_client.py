@@ -22,8 +22,8 @@ class ManagerClient(object):
     def start_simulation(self, uuid):
         s_request = StartSimulationRequest(
             simulation_uuid=uuid,
-            simulation_metadata=jsonpickle.encode({}, unpicklable=True),
-            initial_data=jsonpickle.encode({}, unpicklable=True)
+            simulation_metadata=jsonpickle.encode({}, unpicklable=False),
+            initial_data=jsonpickle.encode({}, unpicklable=False)
         )
 
         print(f'{s_request}')

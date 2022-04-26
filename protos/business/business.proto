@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package business;
+
+service BusinessModule {
+  rpc bm(BMInput) returns (BMOutput);
+  rpc internal_heat_recobery(InternalHeatRecoveryInput)
+      returns (InternalHeatRecoveryOutput);
+}
+
+message BMInput {
+  string platform = 1;
+  string market_module = 2;
+  string teo_module = 3;
+  string gis_modules = 4;
+}
+
+message BMOutput {
+  string NPV_socio_economic = 1;
+  string IRR_socio_economic = 2;
+  string Sensitivity_NPV_socio_economic = 3;
+  string NPV_comm_actor = 4;
+  string IRR_comm_actor = 5;
+  string Sensitivity_NPV_comm_actor = 6;
+  string Discountrate_socio = 7;
+  string Discountrate_business = 8;
+  string LCOH_s = 9;
+}
+
+message InternalHeatRecoveryInput { string cf_module = 1; }
+
+message InternalHeatRecoveryOutput {
+  string LCOH_sen = 1;
+  string NPV_sen = 2;
+}

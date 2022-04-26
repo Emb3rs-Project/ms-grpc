@@ -15,7 +15,8 @@ class ManagerModule(ManagerServicer):
     def StartSimulation(self, request: StartSimulationRequest, context) -> StartSimulationResponse:
         return StartSimulationResponse(
             simulation_uuid=request.simulation_uuid,
-            result=jsonpickle.encode({"id": 1, "name": "David", "age": 33}, unpicklable=True)
+            result=jsonpickle.encode(
+                {"id": 1, "name": "David", "age": 33}, unpicklable=False)
         )
 
 
