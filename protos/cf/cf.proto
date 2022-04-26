@@ -15,7 +15,7 @@ service CFModule {
 
   // Characterization Detailed
   //  rpc char_detailed(CharacterizationInput) returns (CharacterizationSourceOutput);
-  
+
   // Characterization Simple
   rpc char_simple(CharacterizationInput) returns (CharacterizationSourceOutput);
   // Characterization Building
@@ -39,9 +39,9 @@ message ConvertSinkOutput {
 }
 
 message ConvertSourceInput {
-  string group_of_sources = 1;
-  string sink_group_grid_supply_temperature = 2;
-  string sink_group_grid_return_temperature = 3;
+  string platform = 1;
+  string gis_module = 2;
+  string cf_module = 3;
 }
 
 message ConvertSourceOutput {
