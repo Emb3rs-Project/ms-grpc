@@ -12,6 +12,6 @@ conda activate grpc-module
 # Generate Python Files/Update them
 python -m grpc_tools.protoc \
 -Iprotos/ \
---python_out=. \
---grpc_python_out=. \
+--python_out=plibs \
+--grpc_python_out=plibs \
 $1
