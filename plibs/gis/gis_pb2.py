@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rgis/gis.proto\x12\x03gis\"\x94\x01\n\x12\x43reateNetworkInput\x12\x15\n\rn_supply_list\x18\x01 \x01(\t\x12\x15\n\rn_demand_list\x18\x02 \x01(\t\x12\x0f\n\x07\x65x_grid\x18\x03 \x01(\t\x12\x0e\n\x06\x65x_cap\x18\x04 \x01(\t\x12\x1a\n\x12network_resolution\x18\x05 \x01(\t\x12\x13\n\x0b\x63oords_list\x18\x06 \x01(\t\"T\n\x13\x43reateNetworkOutput\x12\x0f\n\x07road_nw\x18\x01 \x01(\t\x12\x15\n\rn_demand_dict\x18\x02 \x01(\t\x12\x15\n\rn_supply_dict\x18\x03 \x01(\t\"\x8c\x04\n\x14OptimizeNetworkInput\x12\r\n\x05nodes\x18\x01 \x01(\t\x12\r\n\x05\x65\x64ges\x18\x02 \x01(\t\x12\x15\n\rn_supply_dict\x18\x03 \x01(\t\x12\x15\n\rn_demand_dict\x18\x04 \x01(\t\x12\x11\n\twater_den\x18\x05 \x01(\t\x12\x1d\n\x15\x66\x61\x63tor_street_terrain\x18\x06 \x01(\t\x12\x1e\n\x16\x66\x61\x63tor_street_overland\x18\x07 \x01(\t\x12\x15\n\rheat_capacity\x18\x08 \x01(\t\x12\x11\n\tflow_temp\x18\t \x01(\t\x12\x13\n\x0breturn_temp\x18\n \x01(\t\x12\x1b\n\x13surface_losses_dict\x18\x0b \x01(\t\x12\x13\n\x0bground_temp\x18\x0c \x01(\t\x12\x14\n\x0c\x61mbient_temp\x18\r \x01(\t\x12\x11\n\tfc_dig_st\x18\x0e \x01(\t\x12\x11\n\tvc_dig_st\x18\x0f \x01(\t\x12\x14\n\x0cvc_dig_st_ex\x18\x10 \x01(\t\x12\x11\n\tfc_dig_tr\x18\x11 \x01(\t\x12\x11\n\tvc_dig_tr\x18\x12 \x01(\t\x12\x14\n\x0cvc_dig_tr_ex\x18\x13 \x01(\t\x12\x0e\n\x06\x66\x63_pip\x18\x14 \x01(\t\x12\x0e\n\x06vc_pip\x18\x15 \x01(\t\x12\x11\n\tvc_pip_ex\x18\x16 \x01(\t\x12\x14\n\x0cinvest_pumps\x18\x17 \x01(\t\x12\x0e\n\x06\x65x_cap\x18\x18 \x01(\t\"\xe3\x01\n\x15OptimizeNetworkOutput\x12\x19\n\x11res_sources_sinks\x18\x01 \x01(\t\x12\x0c\n\x04sums\x18\x02 \x01(\t\x12\x16\n\x0elosses_cost_kw\x18\x03 \x01(\t\x12\x1e\n\x16network_solution_nodes\x18\x04 \x01(\t\x12\x1e\n\x16network_solution_edges\x18\x05 \x01(\t\x12\x17\n\x0fpotential_edges\x18\x06 \x01(\t\x12\x17\n\x0fpotential_nodes\x18\x07 \x01(\t\x12\x17\n\x0fselected_agents\x18\x08 \x01(\t2\x9b\x01\n\tGISModule\x12\x43\n\x0e\x63reate_network\x12\x17.gis.CreateNetworkInput\x1a\x18.gis.CreateNetworkOutput\x12I\n\x10optimize_network\x12\x19.gis.OptimizeNetworkInput\x1a\x1a.gis.OptimizeNetworkOutputb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rgis/gis.proto\x12\x03gis\"M\n\x12\x43reateNetworkInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x11\n\tcf_module\x18\x02 \x01(\t\x12\x12\n\nteo_module\x18\x03 \x01(\t\"T\n\x13\x43reateNetworkOutput\x12\x0f\n\x07road_nw\x18\x01 \x01(\t\x12\x15\n\rn_demand_dict\x18\x02 \x01(\t\x12\x15\n\rn_supply_dict\x18\x03 \x01(\t\"c\n\x14OptimizeNetworkInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x11\n\tcf_module\x18\x02 \x01(\t\x12\x12\n\nteo_module\x18\x03 \x01(\t\x12\x12\n\ngis_module\x18\x04 \x01(\t\"\xe3\x01\n\x15OptimizeNetworkOutput\x12\x19\n\x11res_sources_sinks\x18\x01 \x01(\t\x12\x0c\n\x04sums\x18\x02 \x01(\t\x12\x16\n\x0elosses_cost_kw\x18\x03 \x01(\t\x12\x1e\n\x16network_solution_nodes\x18\x04 \x01(\t\x12\x1e\n\x16network_solution_edges\x18\x05 \x01(\t\x12\x17\n\x0fpotential_edges\x18\x06 \x01(\t\x12\x17\n\x0fpotential_nodes\x18\x07 \x01(\t\x12\x17\n\x0fselected_agents\x18\x08 \x01(\t2\x9b\x01\n\tGISModule\x12\x43\n\x0e\x63reate_network\x12\x17.gis.CreateNetworkInput\x1a\x18.gis.CreateNetworkOutput\x12I\n\x10optimize_network\x12\x19.gis.OptimizeNetworkInput\x1a\x1a.gis.OptimizeNetworkOutputb\x06proto3')
 
 
 
@@ -54,14 +54,14 @@ _GISMODULE = DESCRIPTOR.services_by_name['GISModule']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _CREATENETWORKINPUT._serialized_start=23
-  _CREATENETWORKINPUT._serialized_end=171
-  _CREATENETWORKOUTPUT._serialized_start=173
-  _CREATENETWORKOUTPUT._serialized_end=257
-  _OPTIMIZENETWORKINPUT._serialized_start=260
-  _OPTIMIZENETWORKINPUT._serialized_end=784
-  _OPTIMIZENETWORKOUTPUT._serialized_start=787
-  _OPTIMIZENETWORKOUTPUT._serialized_end=1014
-  _GISMODULE._serialized_start=1017
-  _GISMODULE._serialized_end=1172
+  _CREATENETWORKINPUT._serialized_start=22
+  _CREATENETWORKINPUT._serialized_end=99
+  _CREATENETWORKOUTPUT._serialized_start=101
+  _CREATENETWORKOUTPUT._serialized_end=185
+  _OPTIMIZENETWORKINPUT._serialized_start=187
+  _OPTIMIZENETWORKINPUT._serialized_end=286
+  _OPTIMIZENETWORKOUTPUT._serialized_start=289
+  _OPTIMIZENETWORKOUTPUT._serialized_end=516
+  _GISMODULE._serialized_start=519
+  _GISMODULE._serialized_end=674
 # @@protoc_insertion_point(module_scope)
