@@ -49,6 +49,11 @@ class CFModuleStub(object):
                 request_serializer=cf_dot_cf__pb2.CharacterizationInput.SerializeToString,
                 response_deserializer=cf_dot_cf__pb2.CharacterizationSinkOutput.FromString,
                 )
+        self.char_adjust_capacity = channel.unary_unary(
+                '/cf.CFModule/char_adjust_capacity',
+                request_serializer=cf_dot_cf__pb2.CharacterizationInput.SerializeToString,
+                response_deserializer=cf_dot_cf__pb2.CharacterizationOutput.FromString,
+                )
 
 
 class CFModuleServicer(object):
@@ -84,7 +89,8 @@ class CFModuleServicer(object):
 
     def char_simple(self, request, context):
         """Characterization Detailed
-        rpc char_detailed(CharacterizationInput) returns (CharacterizationSourceOutput);
+        rpc char_detailed(CharacterizationInput) returns
+        (CharacterizationSourceOutput);
 
         Characterization Simple
         """
@@ -102,6 +108,12 @@ class CFModuleServicer(object):
     def char_greenhouse(self, request, context):
         """Characterization Greenhouse
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def char_adjust_capacity(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -143,6 +155,11 @@ def add_CFModuleServicer_to_server(servicer, server):
                     servicer.char_greenhouse,
                     request_deserializer=cf_dot_cf__pb2.CharacterizationInput.FromString,
                     response_serializer=cf_dot_cf__pb2.CharacterizationSinkOutput.SerializeToString,
+            ),
+            'char_adjust_capacity': grpc.unary_unary_rpc_method_handler(
+                    servicer.char_adjust_capacity,
+                    request_deserializer=cf_dot_cf__pb2.CharacterizationInput.FromString,
+                    response_serializer=cf_dot_cf__pb2.CharacterizationOutput.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -270,5 +287,22 @@ class CFModule(object):
         return grpc.experimental.unary_unary(request, target, '/cf.CFModule/char_greenhouse',
             cf_dot_cf__pb2.CharacterizationInput.SerializeToString,
             cf_dot_cf__pb2.CharacterizationSinkOutput.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def char_adjust_capacity(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cf.CFModule/char_adjust_capacity',
+            cf_dot_cf__pb2.CharacterizationInput.SerializeToString,
+            cf_dot_cf__pb2.CharacterizationOutput.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -14,12 +14,13 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x63\x66/cf.proto\x12\x02\x63\x66\"%\n\x11PlatformOnlyInput\x12\x10\n\x08platform\x18\x01 \x01(\t\")\n\x15\x43haracterizationInput\x12\x10\n\x08platform\x18\x01 \x01(\t\"c\n\x11\x43onvertSinkOutput\x12\x16\n\x0e\x61ll_sinks_info\x18\x01 \x01(\t\x12\x15\n\rn_demand_list\x18\x02 \x01(\t\x12\x1f\n\x17teo_demand_factor_group\x18\x03 \x01(\t\"M\n\x12\x43onvertSourceInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x12\n\ngis_module\x18\x02 \x01(\t\x12\x11\n\tcf_module\x18\x03 \x01(\t\"\xd6\x01\n\x13\x43onvertSourceOutput\x12\x18\n\x10\x61ll_sources_info\x18\x01 \x01(\t\x12\x12\n\nteo_string\x18\x02 \x01(\t\x12\x12\n\ninput_fuel\x18\x03 \x01(\t\x12\x13\n\x0boutput_fuel\x18\x04 \x01(\t\x12\x0e\n\x06output\x18\x05 \x01(\t\x12\r\n\x05input\x18\x06 \x01(\t\x12\x15\n\rn_supply_list\x18\x07 \x01(\t\x12!\n\x19teo_capacity_factor_group\x18\x08 \x01(\t\x12\x0f\n\x07teo_dhn\x18\t \x01(\t\"}\n\x12\x43onvertPinchOutput\x12\x18\n\x10\x63o2_optimization\x18\x01 \x01(\t\x12%\n\x1d\x65nergy_recovered_optimization\x18\x02 \x01(\t\x12&\n\x1e\x65nergy_investment_optimization\x18\x03 \x01(\t\"(\n\x10\x43onvertOrcOutput\x12\x14\n\x0c\x62\x65st_options\x18\x01 \x01(\t\"n\n\x1a\x43haracterizationSinkOutput\x12\x17\n\nhot_stream\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x18\n\x0b\x63old_stream\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\r\n\x0b_hot_streamB\x0e\n\x0c_cold_stream\"/\n\x1c\x43haracterizationSourceOutput\x12\x0f\n\x07streams\x18\x01 \x01(\t2\xed\x03\n\x08\x43\x46Module\x12<\n\x0c\x63onvert_sink\x12\x15.cf.PlatformOnlyInput\x1a\x15.cf.ConvertSinkOutput\x12\x41\n\x0e\x63onvert_source\x12\x16.cf.ConvertSourceInput\x1a\x17.cf.ConvertSourceOutput\x12>\n\rconvert_pinch\x12\x15.cf.PlatformOnlyInput\x1a\x16.cf.ConvertPinchOutput\x12:\n\x0b\x63onvert_orc\x12\x15.cf.PlatformOnlyInput\x1a\x14.cf.ConvertOrcOutput\x12J\n\x0b\x63har_simple\x12\x19.cf.CharacterizationInput\x1a .cf.CharacterizationSourceOutput\x12J\n\rchar_building\x12\x19.cf.CharacterizationInput\x1a\x1e.cf.CharacterizationSinkOutput\x12L\n\x0f\x63har_greenhouse\x12\x19.cf.CharacterizationInput\x1a\x1e.cf.CharacterizationSinkOutputb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x63\x66/cf.proto\x12\x02\x63\x66\"%\n\x11PlatformOnlyInput\x12\x10\n\x08platform\x18\x01 \x01(\t\")\n\x15\x43haracterizationInput\x12\x10\n\x08platform\x18\x01 \x01(\t\"(\n\x16\x43haracterizationOutput\x12\x0e\n\x06stream\x18\x01 \x01(\t\"c\n\x11\x43onvertSinkOutput\x12\x16\n\x0e\x61ll_sinks_info\x18\x01 \x01(\t\x12\x15\n\rn_demand_list\x18\x02 \x01(\t\x12\x1f\n\x17teo_demand_factor_group\x18\x03 \x01(\t\"M\n\x12\x43onvertSourceInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x12\n\ngis_module\x18\x02 \x01(\t\x12\x11\n\tcf_module\x18\x03 \x01(\t\"\xd6\x01\n\x13\x43onvertSourceOutput\x12\x18\n\x10\x61ll_sources_info\x18\x01 \x01(\t\x12\x12\n\nteo_string\x18\x02 \x01(\t\x12\x12\n\ninput_fuel\x18\x03 \x01(\t\x12\x13\n\x0boutput_fuel\x18\x04 \x01(\t\x12\x0e\n\x06output\x18\x05 \x01(\t\x12\r\n\x05input\x18\x06 \x01(\t\x12\x15\n\rn_supply_list\x18\x07 \x01(\t\x12!\n\x19teo_capacity_factor_group\x18\x08 \x01(\t\x12\x0f\n\x07teo_dhn\x18\t \x01(\t\"}\n\x12\x43onvertPinchOutput\x12\x18\n\x10\x63o2_optimization\x18\x01 \x01(\t\x12%\n\x1d\x65nergy_recovered_optimization\x18\x02 \x01(\t\x12&\n\x1e\x65nergy_investment_optimization\x18\x03 \x01(\t\"(\n\x10\x43onvertOrcOutput\x12\x14\n\x0c\x62\x65st_options\x18\x01 \x01(\t\"E\n\x1a\x43haracterizationSinkOutput\x12\x12\n\nhot_stream\x18\x01 \x01(\t\x12\x13\n\x0b\x63old_stream\x18\x02 \x01(\t\"/\n\x1c\x43haracterizationSourceOutput\x12\x0f\n\x07streams\x18\x01 \x01(\t2\xbc\x04\n\x08\x43\x46Module\x12<\n\x0c\x63onvert_sink\x12\x15.cf.PlatformOnlyInput\x1a\x15.cf.ConvertSinkOutput\x12\x41\n\x0e\x63onvert_source\x12\x16.cf.ConvertSourceInput\x1a\x17.cf.ConvertSourceOutput\x12>\n\rconvert_pinch\x12\x15.cf.PlatformOnlyInput\x1a\x16.cf.ConvertPinchOutput\x12:\n\x0b\x63onvert_orc\x12\x15.cf.PlatformOnlyInput\x1a\x14.cf.ConvertOrcOutput\x12J\n\x0b\x63har_simple\x12\x19.cf.CharacterizationInput\x1a .cf.CharacterizationSourceOutput\x12J\n\rchar_building\x12\x19.cf.CharacterizationInput\x1a\x1e.cf.CharacterizationSinkOutput\x12L\n\x0f\x63har_greenhouse\x12\x19.cf.CharacterizationInput\x1a\x1e.cf.CharacterizationSinkOutput\x12M\n\x14\x63har_adjust_capacity\x12\x19.cf.CharacterizationInput\x1a\x1a.cf.CharacterizationOutputb\x06proto3')
 
 
 
 _PLATFORMONLYINPUT = DESCRIPTOR.message_types_by_name['PlatformOnlyInput']
 _CHARACTERIZATIONINPUT = DESCRIPTOR.message_types_by_name['CharacterizationInput']
+_CHARACTERIZATIONOUTPUT = DESCRIPTOR.message_types_by_name['CharacterizationOutput']
 _CONVERTSINKOUTPUT = DESCRIPTOR.message_types_by_name['ConvertSinkOutput']
 _CONVERTSOURCEINPUT = DESCRIPTOR.message_types_by_name['ConvertSourceInput']
 _CONVERTSOURCEOUTPUT = DESCRIPTOR.message_types_by_name['ConvertSourceOutput']
@@ -40,6 +41,13 @@ CharacterizationInput = _reflection.GeneratedProtocolMessageType('Characterizati
   # @@protoc_insertion_point(class_scope:cf.CharacterizationInput)
   })
 _sym_db.RegisterMessage(CharacterizationInput)
+
+CharacterizationOutput = _reflection.GeneratedProtocolMessageType('CharacterizationOutput', (_message.Message,), {
+  'DESCRIPTOR' : _CHARACTERIZATIONOUTPUT,
+  '__module__' : 'cf.cf_pb2'
+  # @@protoc_insertion_point(class_scope:cf.CharacterizationOutput)
+  })
+_sym_db.RegisterMessage(CharacterizationOutput)
 
 ConvertSinkOutput = _reflection.GeneratedProtocolMessageType('ConvertSinkOutput', (_message.Message,), {
   'DESCRIPTOR' : _CONVERTSINKOUTPUT,
@@ -98,20 +106,22 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PLATFORMONLYINPUT._serialized_end=56
   _CHARACTERIZATIONINPUT._serialized_start=58
   _CHARACTERIZATIONINPUT._serialized_end=99
-  _CONVERTSINKOUTPUT._serialized_start=101
-  _CONVERTSINKOUTPUT._serialized_end=200
-  _CONVERTSOURCEINPUT._serialized_start=202
-  _CONVERTSOURCEINPUT._serialized_end=279
-  _CONVERTSOURCEOUTPUT._serialized_start=282
-  _CONVERTSOURCEOUTPUT._serialized_end=496
-  _CONVERTPINCHOUTPUT._serialized_start=498
-  _CONVERTPINCHOUTPUT._serialized_end=623
-  _CONVERTORCOUTPUT._serialized_start=625
-  _CONVERTORCOUTPUT._serialized_end=665
-  _CHARACTERIZATIONSINKOUTPUT._serialized_start=667
-  _CHARACTERIZATIONSINKOUTPUT._serialized_end=777
-  _CHARACTERIZATIONSOURCEOUTPUT._serialized_start=779
-  _CHARACTERIZATIONSOURCEOUTPUT._serialized_end=826
-  _CFMODULE._serialized_start=829
-  _CFMODULE._serialized_end=1322
+  _CHARACTERIZATIONOUTPUT._serialized_start=101
+  _CHARACTERIZATIONOUTPUT._serialized_end=141
+  _CONVERTSINKOUTPUT._serialized_start=143
+  _CONVERTSINKOUTPUT._serialized_end=242
+  _CONVERTSOURCEINPUT._serialized_start=244
+  _CONVERTSOURCEINPUT._serialized_end=321
+  _CONVERTSOURCEOUTPUT._serialized_start=324
+  _CONVERTSOURCEOUTPUT._serialized_end=538
+  _CONVERTPINCHOUTPUT._serialized_start=540
+  _CONVERTPINCHOUTPUT._serialized_end=665
+  _CONVERTORCOUTPUT._serialized_start=667
+  _CONVERTORCOUTPUT._serialized_end=707
+  _CHARACTERIZATIONSINKOUTPUT._serialized_start=709
+  _CHARACTERIZATIONSINKOUTPUT._serialized_end=778
+  _CHARACTERIZATIONSOURCEOUTPUT._serialized_start=780
+  _CHARACTERIZATIONSOURCEOUTPUT._serialized_end=827
+  _CFMODULE._serialized_start=830
+  _CFMODULE._serialized_end=1402
 # @@protoc_insertion_point(module_scope)

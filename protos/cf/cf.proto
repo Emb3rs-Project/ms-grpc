@@ -24,11 +24,14 @@ service CFModule {
   // Characterization Greenhouse
   rpc char_greenhouse(CharacterizationInput)
       returns (CharacterizationSinkOutput);
+
+  rpc char_adjust_capacity(CharacterizationInput) returns (CharacterizationOutput);
 }
 
 message PlatformOnlyInput { string platform = 1; }
 
 message CharacterizationInput { string platform = 1; }
+message CharacterizationOutput { string stream = 1; }
 
 message ConvertSinkOutput {
   string all_sinks_info = 1;
@@ -63,8 +66,8 @@ message ConvertPinchOutput {
 message ConvertOrcOutput { string best_options = 1; }
 
 message CharacterizationSinkOutput {
-  optional string hot_stream = 1;
-  optional string cold_stream = 2;
+  string hot_stream = 1;
+  string cold_stream = 2;
 }
 
 message CharacterizationSourceOutput { string streams = 1; }
