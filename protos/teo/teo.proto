@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package teo;
+
+service TEOModule {
+  rpc buildmodel(BuildModelInput) returns (BuildModelOutput);
+}
+
+
+message BuildModelInput {
+  string platform = 1;
+  string cf_module = 2;
+  string gis_module = 3;
+}
+
+message BuildModelOutput {
+  string output = 1;
+}
