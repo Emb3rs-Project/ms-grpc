@@ -31,6 +31,7 @@ class ConvertPinchOutputModel(BaseGRPC):
 
 class ConvertOrcOutputModel(BaseGRPC):
     best_options: list = Field(default=[])
+    report: str = Field(default="")
 
 
 class CharacterizationSourceOutputModel(BaseGRPC):

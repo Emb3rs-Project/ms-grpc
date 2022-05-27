@@ -63,7 +63,10 @@ message ConvertPinchOutput {
   string energy_investment_optimization = 3;
 }
 
-message ConvertOrcOutput { string best_options = 1; }
+message ConvertOrcOutput { 
+  string best_options = 1; 
+  string report = 2;
+}
 
 message CharacterizationSinkOutput {
   string hot_stream = 1;
