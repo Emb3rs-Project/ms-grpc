@@ -8,7 +8,7 @@ message StartSimulationRequest {
   string initial_data = 3;
 }
 
-message StartSimulationResponse {}
+message StartSimulationResponse { int32 status = 1; }
 
 message StartCharacterizationRequest {
   string entity_id = 1;
