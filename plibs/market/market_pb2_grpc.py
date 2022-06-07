@@ -16,13 +16,13 @@ class MarketModuleStub(object):
         """
         self.RunShortTermMarket = channel.unary_unary(
                 '/market.MarketModule/RunShortTermMarket',
-                request_serializer=market_dot_market__pb2.MarketInput.SerializeToString,
-                response_deserializer=market_dot_market__pb2.MarketOutput.FromString,
+                request_serializer=market_dot_market__pb2.MarketInputRequest.SerializeToString,
+                response_deserializer=market_dot_market__pb2.ShortTermMarketResponse.FromString,
                 )
         self.RunLongTermMarket = channel.unary_unary(
                 '/market.MarketModule/RunLongTermMarket',
-                request_serializer=market_dot_market__pb2.MarketInput.SerializeToString,
-                response_deserializer=market_dot_market__pb2.MarketOutput.FromString,
+                request_serializer=market_dot_market__pb2.MarketInputRequest.SerializeToString,
+                response_deserializer=market_dot_market__pb2.LongTermMarketResponse.FromString,
                 )
 
 
@@ -46,13 +46,13 @@ def add_MarketModuleServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'RunShortTermMarket': grpc.unary_unary_rpc_method_handler(
                     servicer.RunShortTermMarket,
-                    request_deserializer=market_dot_market__pb2.MarketInput.FromString,
-                    response_serializer=market_dot_market__pb2.MarketOutput.SerializeToString,
+                    request_deserializer=market_dot_market__pb2.MarketInputRequest.FromString,
+                    response_serializer=market_dot_market__pb2.ShortTermMarketResponse.SerializeToString,
             ),
             'RunLongTermMarket': grpc.unary_unary_rpc_method_handler(
                     servicer.RunLongTermMarket,
-                    request_deserializer=market_dot_market__pb2.MarketInput.FromString,
-                    response_serializer=market_dot_market__pb2.MarketOutput.SerializeToString,
+                    request_deserializer=market_dot_market__pb2.MarketInputRequest.FromString,
+                    response_serializer=market_dot_market__pb2.LongTermMarketResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -76,8 +76,8 @@ class MarketModule(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/market.MarketModule/RunShortTermMarket',
-            market_dot_market__pb2.MarketInput.SerializeToString,
-            market_dot_market__pb2.MarketOutput.FromString,
+            market_dot_market__pb2.MarketInputRequest.SerializeToString,
+            market_dot_market__pb2.ShortTermMarketResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -93,7 +93,7 @@ class MarketModule(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/market.MarketModule/RunLongTermMarket',
-            market_dot_market__pb2.MarketInput.SerializeToString,
-            market_dot_market__pb2.MarketOutput.FromString,
+            market_dot_market__pb2.MarketInputRequest.SerializeToString,
+            market_dot_market__pb2.LongTermMarketResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
