@@ -4,7 +4,13 @@ package market;
 
 service MarketModule {
   rpc RunShortTermMarket (MarketInputRequest) returns (ShortTermMarketResponse);
+  rpc RunShortTermMarketDirect (MarketInput) returns (ShortTermMarketResponse);
   rpc RunLongTermMarket (MarketInputRequest) returns (LongTermMarketResponse);
+  rpc RunLongTermMarketDirect (MarketInput) returns (LongTermMarketResponse);
+}
+
+message MarketInput {
+  string input = 1;
 }
 
 message MarketInputRequest {
