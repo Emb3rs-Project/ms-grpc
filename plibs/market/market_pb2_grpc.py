@@ -19,9 +19,19 @@ class MarketModuleStub(object):
                 request_serializer=market_dot_market__pb2.MarketInputRequest.SerializeToString,
                 response_deserializer=market_dot_market__pb2.ShortTermMarketResponse.FromString,
                 )
+        self.RunShortTermMarketDirect = channel.unary_unary(
+                '/market.MarketModule/RunShortTermMarketDirect',
+                request_serializer=market_dot_market__pb2.MarketInput.SerializeToString,
+                response_deserializer=market_dot_market__pb2.ShortTermMarketResponse.FromString,
+                )
         self.RunLongTermMarket = channel.unary_unary(
                 '/market.MarketModule/RunLongTermMarket',
                 request_serializer=market_dot_market__pb2.MarketInputRequest.SerializeToString,
+                response_deserializer=market_dot_market__pb2.LongTermMarketResponse.FromString,
+                )
+        self.RunLongTermMarketDirect = channel.unary_unary(
+                '/market.MarketModule/RunLongTermMarketDirect',
+                request_serializer=market_dot_market__pb2.MarketInput.SerializeToString,
                 response_deserializer=market_dot_market__pb2.LongTermMarketResponse.FromString,
                 )
 
@@ -35,7 +45,19 @@ class MarketModuleServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RunShortTermMarketDirect(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def RunLongTermMarket(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RunLongTermMarketDirect(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -49,9 +71,19 @@ def add_MarketModuleServicer_to_server(servicer, server):
                     request_deserializer=market_dot_market__pb2.MarketInputRequest.FromString,
                     response_serializer=market_dot_market__pb2.ShortTermMarketResponse.SerializeToString,
             ),
+            'RunShortTermMarketDirect': grpc.unary_unary_rpc_method_handler(
+                    servicer.RunShortTermMarketDirect,
+                    request_deserializer=market_dot_market__pb2.MarketInput.FromString,
+                    response_serializer=market_dot_market__pb2.ShortTermMarketResponse.SerializeToString,
+            ),
             'RunLongTermMarket': grpc.unary_unary_rpc_method_handler(
                     servicer.RunLongTermMarket,
                     request_deserializer=market_dot_market__pb2.MarketInputRequest.FromString,
+                    response_serializer=market_dot_market__pb2.LongTermMarketResponse.SerializeToString,
+            ),
+            'RunLongTermMarketDirect': grpc.unary_unary_rpc_method_handler(
+                    servicer.RunLongTermMarketDirect,
+                    request_deserializer=market_dot_market__pb2.MarketInput.FromString,
                     response_serializer=market_dot_market__pb2.LongTermMarketResponse.SerializeToString,
             ),
     }
@@ -82,6 +114,23 @@ class MarketModule(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def RunShortTermMarketDirect(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/market.MarketModule/RunShortTermMarketDirect',
+            market_dot_market__pb2.MarketInput.SerializeToString,
+            market_dot_market__pb2.ShortTermMarketResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def RunLongTermMarket(request,
             target,
             options=(),
@@ -94,6 +143,23 @@ class MarketModule(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/market.MarketModule/RunLongTermMarket',
             market_dot_market__pb2.MarketInputRequest.SerializeToString,
+            market_dot_market__pb2.LongTermMarketResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RunLongTermMarketDirect(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/market.MarketModule/RunLongTermMarketDirect',
+            market_dot_market__pb2.MarketInput.SerializeToString,
             market_dot_market__pb2.LongTermMarketResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
