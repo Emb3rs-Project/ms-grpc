@@ -3,24 +3,43 @@ syntax = "proto3";
 package market;
 
 service MarketModule {
-  rpc RunShortTermMarket (MarketInput) returns (MarketOutput);
-  rpc RunLongTermMarket (MarketInput) returns (MarketOutput);
+  rpc RunShortTermMarket (MarketInputRequest) returns (ShortTermMarketResponse);
+  rpc RunLongTermMarket (MarketInputRequest) returns (LongTermMarketResponse);
 }
 
-message MarketInput {
-  string input = 1;
+message MarketInputRequest {
+  string gis_module = 1;
+  string cf_module = 2;
+  string teo_module = 3;
 }
 
-message MarketOutput {
+
+message ShortTermMarketResponse {
   string Gn = 1;
   string Ln = 2;
   string Pn = 3;
   string QoE = 4;
-  bool optimal = 5;
+  string optimal = 5;
   string plot_market_clearing = 6;
   string settlement = 7;
   string social_welfare_h = 8;
   string shadow_price = 9;
   string Tnm = 10;
   string agent_operational_cost = 11;
+}
+
+message LongTermMarketResponse {
+  string Gn = 1;
+  string Ln = 2;
+  string Pn = 3;
+  string QoE = 4;
+  string optimal = 5;
+  string settlement = 6;
+  string social_welfare_h = 7;
+  string SPM = 8;
+  string ADG = 9;
+  string expensive_prod = 10;
+  string shadow_price = 11;
+  string Tnm = 12;
+  string agent_operational_cost = 13;
 }
