@@ -17,6 +17,10 @@ class ConvertOrcOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string best_options = 1;</code>
      */
     private $best_options = '';
+    /**
+     * Generated from protobuf field <code>string report = 2;</code>
+     */
+    private $report = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class ConvertOrcOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $best_options
+     *     @type string $report
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class ConvertOrcOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->best_options = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string report = 2;</code>
+     * @return string
+     */
+    public function getReport()
+    {
+        return $this->report;
+    }
+
+    /**
+     * Generated from protobuf field <code>string report = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setReport($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->report = $var;
 
         return $this;
     }

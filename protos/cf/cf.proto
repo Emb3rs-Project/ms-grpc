@@ -13,6 +13,8 @@ service CFModule {
   // Simulation Convert ORC
   rpc convert_orc(PlatformOnlyInput) returns (ConvertOrcOutput);
 
+  rpc convert_pinch_isolated(PlatformOnlyInput) returns (ConvertPinchOutput);
+
   // Characterization Detailed
   //  rpc char_detailed(CharacterizationInput) returns
   //  (CharacterizationSourceOutput);

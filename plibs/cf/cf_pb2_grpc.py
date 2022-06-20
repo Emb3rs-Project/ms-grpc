@@ -34,6 +34,11 @@ class CFModuleStub(object):
                 request_serializer=cf_dot_cf__pb2.PlatformOnlyInput.SerializeToString,
                 response_deserializer=cf_dot_cf__pb2.ConvertOrcOutput.FromString,
                 )
+        self.convert_pinch_isolated = channel.unary_unary(
+                '/cf.CFModule/convert_pinch_isolated',
+                request_serializer=cf_dot_cf__pb2.PlatformOnlyInput.SerializeToString,
+                response_deserializer=cf_dot_cf__pb2.ConvertPinchOutput.FromString,
+                )
         self.char_simple = channel.unary_unary(
                 '/cf.CFModule/char_simple',
                 request_serializer=cf_dot_cf__pb2.CharacterizationInput.SerializeToString,
@@ -83,6 +88,12 @@ class CFModuleServicer(object):
     def convert_orc(self, request, context):
         """Simulation Convert ORC
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def convert_pinch_isolated(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -140,6 +151,11 @@ def add_CFModuleServicer_to_server(servicer, server):
                     servicer.convert_orc,
                     request_deserializer=cf_dot_cf__pb2.PlatformOnlyInput.FromString,
                     response_serializer=cf_dot_cf__pb2.ConvertOrcOutput.SerializeToString,
+            ),
+            'convert_pinch_isolated': grpc.unary_unary_rpc_method_handler(
+                    servicer.convert_pinch_isolated,
+                    request_deserializer=cf_dot_cf__pb2.PlatformOnlyInput.FromString,
+                    response_serializer=cf_dot_cf__pb2.ConvertPinchOutput.SerializeToString,
             ),
             'char_simple': grpc.unary_unary_rpc_method_handler(
                     servicer.char_simple,
@@ -236,6 +252,23 @@ class CFModule(object):
         return grpc.experimental.unary_unary(request, target, '/cf.CFModule/convert_orc',
             cf_dot_cf__pb2.PlatformOnlyInput.SerializeToString,
             cf_dot_cf__pb2.ConvertOrcOutput.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def convert_pinch_isolated(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cf.CFModule/convert_pinch_isolated',
+            cf_dot_cf__pb2.PlatformOnlyInput.SerializeToString,
+            cf_dot_cf__pb2.ConvertPinchOutput.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

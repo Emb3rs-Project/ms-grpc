@@ -77,6 +77,20 @@ class CFModuleClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Cf\PlatformOnlyInput $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function convert_pinch_isolated(\Cf\PlatformOnlyInput $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/cf.CFModule/convert_pinch_isolated',
+        $argument,
+        ['\Cf\ConvertPinchOutput', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Characterization Detailed
      *  rpc char_detailed(CharacterizationInput) returns
      *  (CharacterizationSourceOutput);
