@@ -86,7 +86,7 @@ class CFModuleClient extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/cf.CFModule/convert_pinch_isolated',
         $argument,
-        ['\Cf\ConvertPinchOutput', 'decode'],
+        ['\Cf\ConvertOrcOutput', 'decode'],
         $metadata, $options);
     }
 

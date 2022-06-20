@@ -37,7 +37,7 @@ class CFModuleStub(object):
         self.convert_pinch_isolated = channel.unary_unary(
                 '/cf.CFModule/convert_pinch_isolated',
                 request_serializer=cf_dot_cf__pb2.PlatformOnlyInput.SerializeToString,
-                response_deserializer=cf_dot_cf__pb2.ConvertPinchOutput.FromString,
+                response_deserializer=cf_dot_cf__pb2.ConvertOrcOutput.FromString,
                 )
         self.char_simple = channel.unary_unary(
                 '/cf.CFModule/char_simple',
@@ -155,7 +155,7 @@ def add_CFModuleServicer_to_server(servicer, server):
             'convert_pinch_isolated': grpc.unary_unary_rpc_method_handler(
                     servicer.convert_pinch_isolated,
                     request_deserializer=cf_dot_cf__pb2.PlatformOnlyInput.FromString,
-                    response_serializer=cf_dot_cf__pb2.ConvertPinchOutput.SerializeToString,
+                    response_serializer=cf_dot_cf__pb2.ConvertOrcOutput.SerializeToString,
             ),
             'char_simple': grpc.unary_unary_rpc_method_handler(
                     servicer.char_simple,
@@ -268,7 +268,7 @@ class CFModule(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/cf.CFModule/convert_pinch_isolated',
             cf_dot_cf__pb2.PlatformOnlyInput.SerializeToString,
-            cf_dot_cf__pb2.ConvertPinchOutput.FromString,
+            cf_dot_cf__pb2.ConvertOrcOutput.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
