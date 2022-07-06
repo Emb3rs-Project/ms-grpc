@@ -14,9 +14,10 @@ message CreateNetworkInput {
 }
 
 message CreateNetworkOutput {
-  string road_nw = 1;
-  string n_demand_dict = 2;
-  string n_supply_dict = 3;
+  string nodes = 1;
+  string edges = 2;
+  string demand_list = 3;
+  string supply_list = 4;
 }
 
 message OptimizeNetworkInput {
@@ -35,4 +36,5 @@ message OptimizeNetworkOutput {
   string potential_edges = 6;
   string potential_nodes = 7;
   string selected_agents = 8;
+  string report = 9;
 }
