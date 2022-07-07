@@ -19,15 +19,15 @@ message BuildModelOutput {
   string AccumulatedNewStorageCapacity = 3;
   string AnnualTechnologyEmission = 4;
   string ProductionByTechnology = 5;
-  string StorageLevelTimesliceStart = 5;
-  string TotalEmissions = 6;
-  string DiscountedCapitalInvestmentByTechnology = 7;
-  string DiscountedCapitalInvestmentByStorage = 8;
-  string DiscountedSalvageValueByTechnology = 9;
-  string DiscountedSalvageValueByStorage = 10;
-  string TotalDiscountedFixedOperatingCost = 11;
-  string VariableOMCost = 12;
-  string ex_capacities = 13;
-  string report = 14;
+  string StorageLevelTimesliceStart = 6;
+  string TotalEmissions = 7;
+  string DiscountedCapitalInvestmentByTechnology = 8;
+  string DiscountedCapitalInvestmentByStorage = 9;
+  string DiscountedSalvageValueByTechnology = 10;
+  string DiscountedSalvageValueByStorage = 11;
+  string TotalDiscountedFixedOperatingCost = 12;
+  string VariableOMCost = 13;
+  string ex_capacities = 14;
+  string report = 15;
 }
 
