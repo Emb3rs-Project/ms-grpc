@@ -12,13 +12,13 @@ service CFModule {
   rpc convert_pinch(PlatformOnlyInput) returns (ConvertPinchOutput);
   // Simulation Convert ORC
   rpc convert_orc(PlatformOnlyInput) returns (ConvertOrcOutput);
-
-  rpc convert_pinch_isolated(PlatformOnlyInput) returns (ConvertOrcOutput);
+  // Simulation Convert Pinch Isolated Streams
+  rpc convert_pinch_isolated(PlatformOnlyInput) returns (ConvertPinchOutput);
 
   // Characterization Detailed
   //  rpc char_detailed(CharacterizationInput) returns
   //  (CharacterizationSourceOutput);
-
+  rpc get_fuel_prices(FuelPriceInput) returns (FuelPriceOutput);
   // Characterization Simple
   rpc char_simple(CharacterizationInput) returns (CharacterizationSourceOutput);
   // Characterization Building
@@ -26,9 +26,11 @@ service CFModule {
   // Characterization Greenhouse
   rpc char_greenhouse(CharacterizationInput)
       returns (CharacterizationSinkOutput);
-
-  rpc char_adjust_capacity(CharacterizationInput) returns (CharacterizationOutput);
 }
+
+
+message FuelPriceInput { string location = 1; }
+message FuelPriceOutput { string fuels_data = 1; }
 
 message PlatformOnlyInput { string platform = 1; }
 
@@ -60,9 +62,8 @@ message ConvertSourceOutput {
 }
 
 message ConvertPinchOutput {
-  string co2_optimization = 1;
-  string energy_recovered_optimization = 2;
-  string energy_investment_optimization = 3;
+  string best_options = 1;
+  string report = 2;
 }
 
 message ConvertOrcOutput { 
@@ -70,9 +71,5 @@ message ConvertOrcOutput {
   string report = 2;
 }
 
-message CharacterizationSinkOutput {
-  string hot_stream = 1;
-  string cold_stream = 2;
-}
-
+message CharacterizationSinkOutput { string streams = 1; }
 message CharacterizationSourceOutput { string streams = 1; }

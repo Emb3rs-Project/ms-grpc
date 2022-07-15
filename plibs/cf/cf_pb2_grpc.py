@@ -37,7 +37,12 @@ class CFModuleStub(object):
         self.convert_pinch_isolated = channel.unary_unary(
                 '/cf.CFModule/convert_pinch_isolated',
                 request_serializer=cf_dot_cf__pb2.PlatformOnlyInput.SerializeToString,
-                response_deserializer=cf_dot_cf__pb2.ConvertOrcOutput.FromString,
+                response_deserializer=cf_dot_cf__pb2.ConvertPinchOutput.FromString,
+                )
+        self.get_fuel_prices = channel.unary_unary(
+                '/cf.CFModule/get_fuel_prices',
+                request_serializer=cf_dot_cf__pb2.FuelPriceInput.SerializeToString,
+                response_deserializer=cf_dot_cf__pb2.FuelPriceOutput.FromString,
                 )
         self.char_simple = channel.unary_unary(
                 '/cf.CFModule/char_simple',
@@ -53,11 +58,6 @@ class CFModuleStub(object):
                 '/cf.CFModule/char_greenhouse',
                 request_serializer=cf_dot_cf__pb2.CharacterizationInput.SerializeToString,
                 response_deserializer=cf_dot_cf__pb2.CharacterizationSinkOutput.FromString,
-                )
-        self.char_adjust_capacity = channel.unary_unary(
-                '/cf.CFModule/char_adjust_capacity',
-                request_serializer=cf_dot_cf__pb2.CharacterizationInput.SerializeToString,
-                response_deserializer=cf_dot_cf__pb2.CharacterizationOutput.FromString,
                 )
 
 
@@ -93,17 +93,23 @@ class CFModuleServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def convert_pinch_isolated(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Simulation Convert Pinch Isolated Streams
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def get_fuel_prices(self, request, context):
+        """Characterization Detailed
+        rpc char_detailed(CharacterizationInput) returns
+        (CharacterizationSourceOutput);
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def char_simple(self, request, context):
-        """Characterization Detailed
-        rpc char_detailed(CharacterizationInput) returns
-        (CharacterizationSourceOutput);
-
-        Characterization Simple
+        """Characterization Simple
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -119,12 +125,6 @@ class CFModuleServicer(object):
     def char_greenhouse(self, request, context):
         """Characterization Greenhouse
         """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def char_adjust_capacity(self, request, context):
-        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -155,7 +155,12 @@ def add_CFModuleServicer_to_server(servicer, server):
             'convert_pinch_isolated': grpc.unary_unary_rpc_method_handler(
                     servicer.convert_pinch_isolated,
                     request_deserializer=cf_dot_cf__pb2.PlatformOnlyInput.FromString,
-                    response_serializer=cf_dot_cf__pb2.ConvertOrcOutput.SerializeToString,
+                    response_serializer=cf_dot_cf__pb2.ConvertPinchOutput.SerializeToString,
+            ),
+            'get_fuel_prices': grpc.unary_unary_rpc_method_handler(
+                    servicer.get_fuel_prices,
+                    request_deserializer=cf_dot_cf__pb2.FuelPriceInput.FromString,
+                    response_serializer=cf_dot_cf__pb2.FuelPriceOutput.SerializeToString,
             ),
             'char_simple': grpc.unary_unary_rpc_method_handler(
                     servicer.char_simple,
@@ -171,11 +176,6 @@ def add_CFModuleServicer_to_server(servicer, server):
                     servicer.char_greenhouse,
                     request_deserializer=cf_dot_cf__pb2.CharacterizationInput.FromString,
                     response_serializer=cf_dot_cf__pb2.CharacterizationSinkOutput.SerializeToString,
-            ),
-            'char_adjust_capacity': grpc.unary_unary_rpc_method_handler(
-                    servicer.char_adjust_capacity,
-                    request_deserializer=cf_dot_cf__pb2.CharacterizationInput.FromString,
-                    response_serializer=cf_dot_cf__pb2.CharacterizationOutput.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -268,7 +268,24 @@ class CFModule(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/cf.CFModule/convert_pinch_isolated',
             cf_dot_cf__pb2.PlatformOnlyInput.SerializeToString,
-            cf_dot_cf__pb2.ConvertOrcOutput.FromString,
+            cf_dot_cf__pb2.ConvertPinchOutput.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def get_fuel_prices(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cf.CFModule/get_fuel_prices',
+            cf_dot_cf__pb2.FuelPriceInput.SerializeToString,
+            cf_dot_cf__pb2.FuelPriceOutput.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -320,22 +337,5 @@ class CFModule(object):
         return grpc.experimental.unary_unary(request, target, '/cf.CFModule/char_greenhouse',
             cf_dot_cf__pb2.CharacterizationInput.SerializeToString,
             cf_dot_cf__pb2.CharacterizationSinkOutput.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def char_adjust_capacity(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cf.CFModule/char_adjust_capacity',
-            cf_dot_cf__pb2.CharacterizationInput.SerializeToString,
-            cf_dot_cf__pb2.CharacterizationOutput.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
