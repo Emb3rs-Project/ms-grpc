@@ -1,20 +1,19 @@
+from pydantic import Field
+from base.BaseGRPC import BaseGRPC
 
 
-import pydantic
+class BMOutputModel(BaseGRPC):
+    NPV_socio_economic: str = Field(default=None)
+    IRR_socio_economic: str = Field(default=None)
+    Sensitivity_NPV_socio_economic: str = Field(default=None)
+    NPV_comm_actor: str = Field(default=None)
+    IRR_comm_actor: str = Field(default=None)
+    Sensitivity_NPV_comm_actor: str = Field(default=None)
+    Discountrate_socio: str = Field(default=None)
+    Discountrate_business: str = Field(default=None)
+    LCOH_s: str = Field(default=None)
 
 
-class BMOutputModel(pydantic.BaseModel):
-    NPV_socio_economic: str = pydantic.Field(default=None)
-    IRR_socio_economic: str = pydantic.Field(default=None)
-    Sensitivity_NPV_socio_economic: str = pydantic.Field(default=None)
-    NPV_comm_actor: str = pydantic.Field(default=None)
-    IRR_comm_actor: str = pydantic.Field(default=None)
-    Sensitivity_NPV_comm_actor: str = pydantic.Field(default=None)
-    Discountrate_socio: str = pydantic.Field(default=None)
-    Discountrate_business: str = pydantic.Field(default=None)
-    LCOH_s: str = pydantic.Field(default=None)
-
-
-class InternalHeatRecoveryOutputModel(pydantic.BaseModel):
-    LCOH_sen: str = pydantic.Field(default=None)
-    NPV_sen: str = pydantic.Field(default=None)
+class InternalHeatRecoveryOutputModel(BaseGRPC):
+    LCOH_sen: str = Field(default=None)
+    NPV_sen: str = Field(default=None)

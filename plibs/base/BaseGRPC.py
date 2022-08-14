@@ -1,8 +1,6 @@
 import jsonpickle
 from pydantic import BaseModel
 
-parsed_attrs = ["dict", "list"]
-
 
 class BaseGRPC(BaseModel):
 
@@ -16,7 +14,7 @@ class BaseGRPC(BaseModel):
         attr_type = type(getattr(self, attribute)).__name__
         if attribute in grpc_message.DESCRIPTOR.fields_by_name.keys():
             grpc_value = getattr(grpc_message, attribute)
-            if attr_type in parsed_attrs and not not grpc_value:
+            if attr_type in ("dict", "list") and grpc_value:
                 parsed = jsonpickle.decode(grpc_value)
                 setattr(self, attribute, parsed)
             else:

@@ -1,4 +1,3 @@
-from email.policy import default
 from typing import Dict, Any
 
 from pydantic import Field
@@ -22,7 +21,6 @@ class OptimizeNetworkOutputModel(BaseGRPC):
     potential_nodes: list = Field(default=[])
     selected_agents: list = Field(default=[])
     report: str = Field(default="")
-
 
 # string res_sources_sinks = 1;
 # string sums = 2;

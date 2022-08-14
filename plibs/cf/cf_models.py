@@ -1,4 +1,3 @@
-from email.policy import default
 from typing import Dict, Any
 
 from pydantic import Field
@@ -42,5 +41,6 @@ class CharacterizationSinkOutputModel(BaseGRPC):
     hot_stream: Dict[str, Any] = Field(default={})
     cold_stream: Dict[str, Any] = Field(default={})
 
+
 class CharacterizationOutput(BaseGRPC):
-    stream: Dict[str,Any] = Field(default={})
+    stream: Dict[str, Any] = Field(default={})
