@@ -15,7 +15,8 @@ class BaseGRPC(BaseModel):
         if attribute in grpc_message.DESCRIPTOR.fields_by_name.keys():
             grpc_value = getattr(grpc_message, attribute)
             if attr_type in ("dict", "list") and grpc_value:
-                parsed = jsonpickle.decode(grpc_value)
+                grpc_value_without_nan = grpc_value.replace("[NaN]", "[]").replace("NaN", "null")
+                parsed = jsonpickle.decode(grpc_value_without_nan)
                 setattr(self, attribute, parsed)
             else:
                 setattr(self, attribute, grpc_value)
