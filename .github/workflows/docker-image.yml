@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: embers-base
+  IMAGE_NAME: ${{ github.repository_owner }}/embers-base
   CTR_USER: ${{ secrets.CTR_USER }}
   CTR_TOKEN: ${{ secrets.CTR_TOKEN }}
 
