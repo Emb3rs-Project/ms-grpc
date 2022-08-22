@@ -49,4 +49,5 @@ message LongTermMarketResponse {
   string shadow_price = 11;
   string Tnm = 12;
   string agent_operational_cost = 13;
+  string report = 14;
 }

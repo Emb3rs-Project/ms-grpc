@@ -12,8 +12,10 @@ class BMOutputModel(BaseGRPC):
     Discountrate_socio: list = Field(default=None)
     Discountrate_business: list = Field(default=None)
     LCOH_s: list = Field(default=None)
+    report: str = Field(default="")
 
 
 class InternalHeatRecoveryOutputModel(BaseGRPC):
     LCOH_sen: str = Field(default=None)
     NPV_sen: str = Field(default=None)
+    report: str = Field(default="")

@@ -30,3 +30,4 @@ class LongTermOutputModel(BaseGRPC):
     shadow_price: list = Field(default=[])
     Tnm: list = Field(default=[])
     agent_operational_cost: list = Field(default=[])
+    report: str = Field(default="")

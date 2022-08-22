@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x62usiness/business.proto\x12\x08\x62usiness\"[\n\x07\x42MInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x15\n\rmarket_module\x18\x02 \x01(\t\x12\x12\n\nteo_module\x18\x03 \x01(\t\x12\x13\n\x0bgis_modules\x18\x04 \x01(\t\"\x89\x02\n\x08\x42MOutput\x12\x1a\n\x12NPV_socio_economic\x18\x01 \x01(\t\x12\x1a\n\x12IRR_socio_economic\x18\x02 \x01(\t\x12&\n\x1eSensitivity_NPV_socio_economic\x18\x03 \x01(\t\x12\x16\n\x0eNPV_comm_actor\x18\x04 \x01(\t\x12\x16\n\x0eIRR_comm_actor\x18\x05 \x01(\t\x12\"\n\x1aSensitivity_NPV_comm_actor\x18\x06 \x01(\t\x12\x1a\n\x12\x44iscountrate_socio\x18\x07 \x01(\t\x12\x1d\n\x15\x44iscountrate_business\x18\x08 \x01(\t\x12\x0e\n\x06LCOH_s\x18\t \x01(\t\".\n\x19InternalHeatRecoveryInput\x12\x11\n\tcf_module\x18\x01 \x01(\t\"?\n\x1aInternalHeatRecoveryOutput\x12\x10\n\x08LCOH_sen\x18\x01 \x01(\t\x12\x0f\n\x07NPV_sen\x18\x02 \x01(\t2\xa2\x01\n\x0e\x42usinessModule\x12+\n\x02\x62m\x12\x11.business.BMInput\x1a\x12.business.BMOutput\x12\x63\n\x16internal_heat_recobery\x12#.business.InternalHeatRecoveryInput\x1a$.business.InternalHeatRecoveryOutputb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x62usiness/business.proto\x12\x08\x62usiness\"[\n\x07\x42MInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x15\n\rmarket_module\x18\x02 \x01(\t\x12\x12\n\nteo_module\x18\x03 \x01(\t\x12\x13\n\x0bgis_modules\x18\x04 \x01(\t\"\x99\x02\n\x08\x42MOutput\x12\x1a\n\x12NPV_socio_economic\x18\x01 \x01(\t\x12\x1a\n\x12IRR_socio_economic\x18\x02 \x01(\t\x12&\n\x1eSensitivity_NPV_socio_economic\x18\x03 \x01(\t\x12\x16\n\x0eNPV_comm_actor\x18\x04 \x01(\t\x12\x16\n\x0eIRR_comm_actor\x18\x05 \x01(\t\x12\"\n\x1aSensitivity_NPV_comm_actor\x18\x06 \x01(\t\x12\x1a\n\x12\x44iscountrate_socio\x18\x07 \x01(\t\x12\x1d\n\x15\x44iscountrate_business\x18\x08 \x01(\t\x12\x0e\n\x06LCOH_s\x18\t \x01(\t\x12\x0e\n\x06report\x18\n \x01(\t\".\n\x19InternalHeatRecoveryInput\x12\x11\n\tcf_module\x18\x01 \x01(\t\"O\n\x1aInternalHeatRecoveryOutput\x12\x10\n\x08LCOH_sen\x18\x01 \x01(\t\x12\x0f\n\x07NPV_sen\x18\x02 \x01(\t\x12\x0e\n\x06report\x18\x03 \x01(\t2\xa2\x01\n\x0e\x42usinessModule\x12+\n\x02\x62m\x12\x11.business.BMInput\x1a\x12.business.BMOutput\x12\x63\n\x16internal_heat_recobery\x12#.business.InternalHeatRecoveryInput\x1a$.business.InternalHeatRecoveryOutputb\x06proto3')
 
 
 
@@ -57,11 +57,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _BMINPUT._serialized_start=37
   _BMINPUT._serialized_end=128
   _BMOUTPUT._serialized_start=131
-  _BMOUTPUT._serialized_end=396
-  _INTERNALHEATRECOVERYINPUT._serialized_start=398
-  _INTERNALHEATRECOVERYINPUT._serialized_end=444
-  _INTERNALHEATRECOVERYOUTPUT._serialized_start=446
-  _INTERNALHEATRECOVERYOUTPUT._serialized_end=509
-  _BUSINESSMODULE._serialized_start=512
-  _BUSINESSMODULE._serialized_end=674
+  _BMOUTPUT._serialized_end=412
+  _INTERNALHEATRECOVERYINPUT._serialized_start=414
+  _INTERNALHEATRECOVERYINPUT._serialized_end=460
+  _INTERNALHEATRECOVERYOUTPUT._serialized_start=462
+  _INTERNALHEATRECOVERYOUTPUT._serialized_end=541
+  _BUSINESSMODULE._serialized_start=544
+  _BUSINESSMODULE._serialized_end=706
 # @@protoc_insertion_point(module_scope)
