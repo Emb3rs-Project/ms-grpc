@@ -38,8 +38,7 @@ class CharacterizationSourceOutputModel(BaseGRPC):
 
 
 class CharacterizationSinkOutputModel(BaseGRPC):
-    hot_stream: Dict[str, Any] = Field(default={})
-    cold_stream: Dict[str, Any] = Field(default={})
+    streams: list = Field(default=[])
 
 
 class CharacterizationOutput(BaseGRPC):
