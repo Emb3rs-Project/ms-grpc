@@ -9,7 +9,6 @@ class BuildModelOutputModel(BaseGRPC):
     AnnualTechnologyEmission: list = Field(default=[])
     ProductionByTechnology: list = Field(default=[])
     StorageLevelTimesliceStart: list = Field(default=[])
-    UseByTechnology: list = Field(default=[])
     TotalEmissions: list = Field(default=[])
     DiscountedCapitalInvestmentByTechnology: list = Field(default=[])
     DiscountedCapitalInvestmentByStorage: list = Field(default=[])
