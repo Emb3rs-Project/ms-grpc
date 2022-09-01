@@ -29,5 +29,6 @@ message BuildModelOutput {
   string TotalDiscountedFixedOperatingCost = 13;
   string VariableOMCost = 14;
   string ex_capacities = 15;
-  string report = 16;
+  string ProductionByTechnologyMM = 16;
+  string report = 17;
 }
