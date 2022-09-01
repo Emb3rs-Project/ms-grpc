@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rteo/teo.proto\x12\x03teo\"J\n\x0f\x42uildModelInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x11\n\tcf_module\x18\x02 \x01(\t\x12\x12\n\ngis_module\x18\x03 \x01(\t\"\x83\x04\n\x10\x42uildModelOutput\x12\x0c\n\x04\x43ost\x18\x01 \x01(\t\x12\x1e\n\x16\x41\x63\x63umulatedNewCapacity\x18\x02 \x01(\t\x12%\n\x1d\x41\x63\x63umulatedNewStorageCapacity\x18\x03 \x01(\t\x12 \n\x18\x41nnualTechnologyEmission\x18\x04 \x01(\t\x12\x1e\n\x16ProductionByTechnology\x18\x05 \x01(\t\x12\"\n\x1aStorageLevelTimesliceStart\x18\x06 \x01(\t\x12\x16\n\x0eTotalEmissions\x18\x07 \x01(\t\x12/\n\'DiscountedCapitalInvestmentByTechnology\x18\x08 \x01(\t\x12,\n$DiscountedCapitalInvestmentByStorage\x18\t \x01(\t\x12*\n\"DiscountedSalvageValueByTechnology\x18\n \x01(\t\x12\'\n\x1f\x44iscountedSalvageValueByStorage\x18\x0b \x01(\t\x12)\n!TotalDiscountedFixedOperatingCost\x18\x0c \x01(\t\x12\x16\n\x0eVariableOMCost\x18\r \x01(\t\x12\x15\n\rex_capacities\x18\x0e \x01(\t\x12\x0e\n\x06report\x18\x0f \x01(\t2F\n\tTEOModule\x12\x39\n\nbuildmodel\x12\x14.teo.BuildModelInput\x1a\x15.teo.BuildModelOutputb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rteo/teo.proto\x12\x03teo\"J\n\x0f\x42uildModelInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x11\n\tcf_module\x18\x02 \x01(\t\x12\x12\n\ngis_module\x18\x03 \x01(\t\"\xbe\x04\n\x10\x42uildModelOutput\x12\x0c\n\x04\x43ost\x18\x01 \x01(\t\x12\x1e\n\x16\x41\x63\x63umulatedNewCapacity\x18\x02 \x01(\t\x12%\n\x1d\x41\x63\x63umulatedNewStorageCapacity\x18\x03 \x01(\t\x12 \n\x18\x41nnualTechnologyEmission\x18\x04 \x01(\t\x12\x1e\n\x16ProductionByTechnology\x18\x05 \x01(\t\x12\"\n\x1aStorageLevelTimesliceStart\x18\x06 \x01(\t\x12\x17\n\x0fUseByTechnology\x18\x07 \x01(\t\x12\x16\n\x0eTotalEmissions\x18\x08 \x01(\t\x12/\n\'DiscountedCapitalInvestmentByTechnology\x18\t \x01(\t\x12,\n$DiscountedCapitalInvestmentByStorage\x18\n \x01(\t\x12*\n\"DiscountedSalvageValueByTechnology\x18\x0b \x01(\t\x12\'\n\x1f\x44iscountedSalvageValueByStorage\x18\x0c \x01(\t\x12)\n!TotalDiscountedFixedOperatingCost\x18\r \x01(\t\x12\x16\n\x0eVariableOMCost\x18\x0e \x01(\t\x12\x15\n\rex_capacities\x18\x0f \x01(\t\x12 \n\x18ProductionByTechnologyMM\x18\x10 \x01(\t\x12\x0e\n\x06report\x18\x11 \x01(\t2F\n\tTEOModule\x12\x39\n\nbuildmodel\x12\x14.teo.BuildModelInput\x1a\x15.teo.BuildModelOutputb\x06proto3')
 
 
 
@@ -41,7 +41,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _BUILDMODELINPUT._serialized_start=22
   _BUILDMODELINPUT._serialized_end=96
   _BUILDMODELOUTPUT._serialized_start=99
-  _BUILDMODELOUTPUT._serialized_end=614
-  _TEOMODULE._serialized_start=616
-  _TEOMODULE._serialized_end=686
+  _BUILDMODELOUTPUT._serialized_end=673
+  _TEOMODULE._serialized_start=675
+  _TEOMODULE._serialized_end=745
 # @@protoc_insertion_point(module_scope)
