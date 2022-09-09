@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x63\x66/cf.proto\x12\x02\x63\x66\"\"\n\x0e\x46uelPriceInput\x12\x10\n\x08location\x18\x01 \x01(\t\"%\n\x0f\x46uelPriceOutput\x12\x12\n\nfuels_data\x18\x01 \x01(\t\"%\n\x11PlatformOnlyInput\x12\x10\n\x08platform\x18\x01 \x01(\t\")\n\x15\x43haracterizationInput\x12\x10\n\x08platform\x18\x01 \x01(\t\"(\n\x16\x43haracterizationOutput\x12\x0e\n\x06stream\x18\x01 \x01(\t\"c\n\x11\x43onvertSinkOutput\x12\x16\n\x0e\x61ll_sinks_info\x18\x01 \x01(\t\x12\x15\n\rn_demand_list\x18\x02 \x01(\t\x12\x1f\n\x17teo_demand_factor_group\x18\x03 \x01(\t\"M\n\x12\x43onvertSourceInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x12\n\ngis_module\x18\x02 \x01(\t\x12\x11\n\tcf_module\x18\x03 \x01(\t\"\xd6\x01\n\x13\x43onvertSourceOutput\x12\x18\n\x10\x61ll_sources_info\x18\x01 \x01(\t\x12\x12\n\nteo_string\x18\x02 \x01(\t\x12\x12\n\ninput_fuel\x18\x03 \x01(\t\x12\x13\n\x0boutput_fuel\x18\x04 \x01(\t\x12\x0e\n\x06output\x18\x05 \x01(\t\x12\r\n\x05input\x18\x06 \x01(\t\x12\x15\n\rn_supply_list\x18\x07 \x01(\t\x12!\n\x19teo_capacity_factor_group\x18\x08 \x01(\t\x12\x0f\n\x07teo_dhn\x18\t \x01(\t\":\n\x12\x43onvertPinchOutput\x12\x14\n\x0c\x62\x65st_options\x18\x01 \x01(\t\x12\x0e\n\x06report\x18\x02 \x01(\t\"8\n\x10\x43onvertOrcOutput\x12\x14\n\x0c\x62\x65st_options\x18\x01 \x01(\t\x12\x0e\n\x06report\x18\x02 \x01(\t\"-\n\x1a\x43haracterizationSinkOutput\x12\x0f\n\x07streams\x18\x01 \x01(\t\"/\n\x1c\x43haracterizationSourceOutput\x12\x0f\n\x07streams\x18\x01 \x01(\t2\xf2\x04\n\x08\x43\x46Module\x12<\n\x0c\x63onvert_sink\x12\x15.cf.PlatformOnlyInput\x1a\x15.cf.ConvertSinkOutput\x12\x41\n\x0e\x63onvert_source\x12\x16.cf.ConvertSourceInput\x1a\x17.cf.ConvertSourceOutput\x12>\n\rconvert_pinch\x12\x15.cf.PlatformOnlyInput\x1a\x16.cf.ConvertPinchOutput\x12:\n\x0b\x63onvert_orc\x12\x15.cf.PlatformOnlyInput\x1a\x14.cf.ConvertOrcOutput\x12G\n\x16\x63onvert_pinch_isolated\x12\x15.cf.PlatformOnlyInput\x1a\x16.cf.ConvertPinchOutput\x12:\n\x0fget_fuel_prices\x12\x12.cf.FuelPriceInput\x1a\x13.cf.FuelPriceOutput\x12J\n\x0b\x63har_simple\x12\x19.cf.CharacterizationInput\x1a .cf.CharacterizationSourceOutput\x12J\n\rchar_building\x12\x19.cf.CharacterizationInput\x1a\x1e.cf.CharacterizationSinkOutput\x12L\n\x0f\x63har_greenhouse\x12\x19.cf.CharacterizationInput\x1a\x1e.cf.CharacterizationSinkOutputb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x63\x66/cf.proto\x12\x02\x63\x66\"\"\n\x0e\x46uelPriceInput\x12\x10\n\x08location\x18\x01 \x01(\t\"%\n\x0f\x46uelPriceOutput\x12\x12\n\nfuels_data\x18\x01 \x01(\t\"%\n\x11PlatformOnlyInput\x12\x10\n\x08platform\x18\x01 \x01(\t\")\n\x15\x43haracterizationInput\x12\x10\n\x08platform\x18\x01 \x01(\t\"(\n\x16\x43haracterizationOutput\x12\x0e\n\x06stream\x18\x01 \x01(\t\"\x97\x01\n\x11\x43onvertSinkOutput\x12\x16\n\x0e\x61ll_sinks_info\x18\x01 \x01(\t\x12\x17\n\x0fn_grid_specific\x18\x02 \x01(\t\x12\x15\n\rn_demand_list\x18\x03 \x01(\t\x12\x19\n\x11n_thermal_storage\x18\x04 \x01(\t\x12\x1f\n\x17teo_demand_factor_group\x18\x05 \x01(\t\"M\n\x12\x43onvertSourceInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x12\n\ngis_module\x18\x02 \x01(\t\x12\x11\n\tcf_module\x18\x03 \x01(\t\"\xe7\x01\n\x13\x43onvertSourceOutput\x12\x18\n\x10\x61ll_sources_info\x18\x01 \x01(\t\x12\x0f\n\x07\x65x_grid\x18\x02 \x01(\t\x12\x12\n\nteo_string\x18\x03 \x01(\t\x12\x12\n\ninput_fuel\x18\x04 \x01(\t\x12\x13\n\x0boutput_fuel\x18\x05 \x01(\t\x12\x0e\n\x06output\x18\x06 \x01(\t\x12\r\n\x05input\x18\x07 \x01(\t\x12\x15\n\rn_supply_list\x18\x08 \x01(\t\x12!\n\x19teo_capacity_factor_group\x18\t \x01(\t\x12\x0f\n\x07teo_dhn\x18\n \x01(\t\":\n\x12\x43onvertPinchOutput\x12\x14\n\x0c\x62\x65st_options\x18\x01 \x01(\t\x12\x0e\n\x06report\x18\x02 \x01(\t\"8\n\x10\x43onvertOrcOutput\x12\x14\n\x0c\x62\x65st_options\x18\x01 \x01(\t\x12\x0e\n\x06report\x18\x02 \x01(\t\"-\n\x1a\x43haracterizationSinkOutput\x12\x0f\n\x07streams\x18\x01 \x01(\t\"/\n\x1c\x43haracterizationSourceOutput\x12\x0f\n\x07streams\x18\x01 \x01(\t2\xf2\x04\n\x08\x43\x46Module\x12<\n\x0c\x63onvert_sink\x12\x15.cf.PlatformOnlyInput\x1a\x15.cf.ConvertSinkOutput\x12\x41\n\x0e\x63onvert_source\x12\x16.cf.ConvertSourceInput\x1a\x17.cf.ConvertSourceOutput\x12>\n\rconvert_pinch\x12\x15.cf.PlatformOnlyInput\x1a\x16.cf.ConvertPinchOutput\x12:\n\x0b\x63onvert_orc\x12\x15.cf.PlatformOnlyInput\x1a\x14.cf.ConvertOrcOutput\x12G\n\x16\x63onvert_pinch_isolated\x12\x15.cf.PlatformOnlyInput\x1a\x16.cf.ConvertPinchOutput\x12:\n\x0fget_fuel_prices\x12\x12.cf.FuelPriceInput\x1a\x13.cf.FuelPriceOutput\x12J\n\x0b\x63har_simple\x12\x19.cf.CharacterizationInput\x1a .cf.CharacterizationSourceOutput\x12J\n\rchar_building\x12\x19.cf.CharacterizationInput\x1a\x1e.cf.CharacterizationSinkOutput\x12L\n\x0f\x63har_greenhouse\x12\x19.cf.CharacterizationInput\x1a\x1e.cf.CharacterizationSinkOutputb\x06proto3')
 
 
 
@@ -128,20 +128,20 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CHARACTERIZATIONINPUT._serialized_end=174
   _CHARACTERIZATIONOUTPUT._serialized_start=176
   _CHARACTERIZATIONOUTPUT._serialized_end=216
-  _CONVERTSINKOUTPUT._serialized_start=218
-  _CONVERTSINKOUTPUT._serialized_end=317
-  _CONVERTSOURCEINPUT._serialized_start=319
-  _CONVERTSOURCEINPUT._serialized_end=396
-  _CONVERTSOURCEOUTPUT._serialized_start=399
-  _CONVERTSOURCEOUTPUT._serialized_end=613
-  _CONVERTPINCHOUTPUT._serialized_start=615
-  _CONVERTPINCHOUTPUT._serialized_end=673
-  _CONVERTORCOUTPUT._serialized_start=675
-  _CONVERTORCOUTPUT._serialized_end=731
-  _CHARACTERIZATIONSINKOUTPUT._serialized_start=733
-  _CHARACTERIZATIONSINKOUTPUT._serialized_end=778
-  _CHARACTERIZATIONSOURCEOUTPUT._serialized_start=780
-  _CHARACTERIZATIONSOURCEOUTPUT._serialized_end=827
-  _CFMODULE._serialized_start=830
-  _CFMODULE._serialized_end=1456
+  _CONVERTSINKOUTPUT._serialized_start=219
+  _CONVERTSINKOUTPUT._serialized_end=370
+  _CONVERTSOURCEINPUT._serialized_start=372
+  _CONVERTSOURCEINPUT._serialized_end=449
+  _CONVERTSOURCEOUTPUT._serialized_start=452
+  _CONVERTSOURCEOUTPUT._serialized_end=683
+  _CONVERTPINCHOUTPUT._serialized_start=685
+  _CONVERTPINCHOUTPUT._serialized_end=743
+  _CONVERTORCOUTPUT._serialized_start=745
+  _CONVERTORCOUTPUT._serialized_end=801
+  _CHARACTERIZATIONSINKOUTPUT._serialized_start=803
+  _CHARACTERIZATIONSINKOUTPUT._serialized_end=848
+  _CHARACTERIZATIONSOURCEOUTPUT._serialized_start=850
+  _CHARACTERIZATIONSOURCEOUTPUT._serialized_end=897
+  _CFMODULE._serialized_start=900
+  _CFMODULE._serialized_end=1526
 # @@protoc_insertion_point(module_scope)

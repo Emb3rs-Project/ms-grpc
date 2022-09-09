@@ -6,12 +6,15 @@ from base.BaseGRPC import BaseGRPC
 
 class ConvertSinkOutputModel(BaseGRPC):
     all_sinks_info: Dict[str, Any] = Field(default={})
+    n_grid_specific: list = Field(default=[])
     n_demand_list: list = Field(default=[])
+    n_thermal_storage: list = Field(default=[])
     teo_demand_factor_group: list = Field(default=[])
 
 
 class ConvertSourceOutputModel(BaseGRPC):
     all_sources_info: list = Field(default=[])
+    ex_grid: Dict[str, Any] = Field(default={})
     teo_string: str = Field(default=None)
     input_fuel: str = Field(default=None)
     output_fuel: str = Field(default=None)

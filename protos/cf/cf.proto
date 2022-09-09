@@ -39,8 +39,10 @@ message CharacterizationOutput { string stream = 1; }
 
 message ConvertSinkOutput {
   string all_sinks_info = 1;
-  string n_demand_list = 2;
-  string teo_demand_factor_group = 3;
+  string n_grid_specific = 2;
+  string n_demand_list = 3;
+  string n_thermal_storage = 4;
+  string teo_demand_factor_group = 5;
 }
 
 message ConvertSourceInput {
@@ -51,14 +53,15 @@ message ConvertSourceInput {
 
 message ConvertSourceOutput {
   string all_sources_info = 1;
-  string teo_string = 2;
-  string input_fuel = 3;
-  string output_fuel = 4;
-  string output = 5;
-  string input = 6;
-  string n_supply_list = 7;
-  string teo_capacity_factor_group = 8;
-  string teo_dhn = 9;
+  string ex_grid = 2;
+  string teo_string = 3;
+  string input_fuel = 4;
+  string output_fuel = 5;
+  string output = 6;
+  string input = 7;
+  string n_supply_list = 8;
+  string teo_capacity_factor_group = 9;
+  string teo_dhn = 10;
 }
 
 message ConvertPinchOutput {
