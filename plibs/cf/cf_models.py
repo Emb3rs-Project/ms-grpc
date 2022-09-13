@@ -1,4 +1,4 @@
-from typing import Dict, Any
+from typing import Any, Dict, List, Union
 
 from pydantic import Field
 from base.BaseGRPC import BaseGRPC
@@ -14,7 +14,7 @@ class ConvertSinkOutputModel(BaseGRPC):
 
 class ConvertSourceOutputModel(BaseGRPC):
     all_sources_info: list = Field(default=[])
-    ex_grid: Dict[str, Any] = Field(default={})
+    ex_grid: Union[Dict[str, Any], List] = Field(default=[])
     teo_string: str = Field(default=None)
     input_fuel: str = Field(default=None)
     output_fuel: str = Field(default=None)
