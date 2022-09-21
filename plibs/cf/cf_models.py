@@ -26,9 +26,8 @@ class ConvertSourceOutputModel(BaseGRPC):
 
 
 class ConvertPinchOutputModel(BaseGRPC):
-    co2_optimization: list = Field(default=[])
-    energy_recovered_optimization: list = Field(default=[])
-    energy_investment_optimization: list = Field(default=[])
+    best_options: Dict[str, Any] = Field(default={})
+    report: str = Field(default="")
 
 
 class ConvertOrcOutputModel(BaseGRPC):
