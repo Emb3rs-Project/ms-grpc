@@ -20,14 +20,5 @@ class OptimizeNetworkOutputModel(BaseGRPC):
     potential_edges: list = Field(default=[])
     potential_nodes: list = Field(default=[])
     selected_agents: list = Field(default=[])
+    names_dict: Dict[str, Any] = Field(default={})
     report: str = Field(default="")
-
-# string res_sources_sinks = 1;
-# string sums = 2;
-# string losses_cost_kw = 3;
-# string network_solution_nodes = 4;
-# string network_solution_edges = 5;
-# string potential_edges = 6;
-# string potential_nodes = 7;
-# string selected_agents = 8;
-# string report = 9;

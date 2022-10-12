@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rgis/gis.proto\x12\x03gis\"M\n\x12\x43reateNetworkInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x11\n\tcf_module\x18\x02 \x01(\t\x12\x12\n\nteo_module\x18\x03 \x01(\t\"]\n\x13\x43reateNetworkOutput\x12\r\n\x05nodes\x18\x01 \x01(\t\x12\r\n\x05\x65\x64ges\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65mand_list\x18\x03 \x01(\t\x12\x13\n\x0bsupply_list\x18\x04 \x01(\t\"c\n\x14OptimizeNetworkInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x11\n\tcf_module\x18\x02 \x01(\t\x12\x12\n\nteo_module\x18\x03 \x01(\t\x12\x12\n\ngis_module\x18\x04 \x01(\t\"\xf3\x01\n\x15OptimizeNetworkOutput\x12\x19\n\x11res_sources_sinks\x18\x01 \x01(\t\x12\x0c\n\x04sums\x18\x02 \x01(\t\x12\x16\n\x0elosses_cost_kw\x18\x03 \x01(\t\x12\x1e\n\x16network_solution_nodes\x18\x04 \x01(\t\x12\x1e\n\x16network_solution_edges\x18\x05 \x01(\t\x12\x17\n\x0fpotential_edges\x18\x06 \x01(\t\x12\x17\n\x0fpotential_nodes\x18\x07 \x01(\t\x12\x17\n\x0fselected_agents\x18\x08 \x01(\t\x12\x0e\n\x06report\x18\t \x01(\t2\x9b\x01\n\tGISModule\x12\x43\n\x0e\x63reate_network\x12\x17.gis.CreateNetworkInput\x1a\x18.gis.CreateNetworkOutput\x12I\n\x10optimize_network\x12\x19.gis.OptimizeNetworkInput\x1a\x1a.gis.OptimizeNetworkOutputb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rgis/gis.proto\x12\x03gis\"M\n\x12\x43reateNetworkInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x11\n\tcf_module\x18\x02 \x01(\t\x12\x12\n\nteo_module\x18\x03 \x01(\t\"]\n\x13\x43reateNetworkOutput\x12\r\n\x05nodes\x18\x01 \x01(\t\x12\r\n\x05\x65\x64ges\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65mand_list\x18\x03 \x01(\t\x12\x13\n\x0bsupply_list\x18\x04 \x01(\t\"c\n\x14OptimizeNetworkInput\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x11\n\tcf_module\x18\x02 \x01(\t\x12\x12\n\nteo_module\x18\x03 \x01(\t\x12\x12\n\ngis_module\x18\x04 \x01(\t\"\x87\x02\n\x15OptimizeNetworkOutput\x12\x19\n\x11res_sources_sinks\x18\x01 \x01(\t\x12\x0c\n\x04sums\x18\x02 \x01(\t\x12\x16\n\x0elosses_cost_kw\x18\x03 \x01(\t\x12\x1e\n\x16network_solution_nodes\x18\x04 \x01(\t\x12\x1e\n\x16network_solution_edges\x18\x05 \x01(\t\x12\x17\n\x0fpotential_edges\x18\x06 \x01(\t\x12\x17\n\x0fpotential_nodes\x18\x07 \x01(\t\x12\x17\n\x0fselected_agents\x18\x08 \x01(\t\x12\x12\n\nnames_dict\x18\t \x01(\t\x12\x0e\n\x06report\x18\n \x01(\t2\x9b\x01\n\tGISModule\x12\x43\n\x0e\x63reate_network\x12\x17.gis.CreateNetworkInput\x1a\x18.gis.CreateNetworkOutput\x12I\n\x10optimize_network\x12\x19.gis.OptimizeNetworkInput\x1a\x1a.gis.OptimizeNetworkOutputb\x06proto3')
 
 
 
@@ -61,7 +61,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _OPTIMIZENETWORKINPUT._serialized_start=196
   _OPTIMIZENETWORKINPUT._serialized_end=295
   _OPTIMIZENETWORKOUTPUT._serialized_start=298
-  _OPTIMIZENETWORKOUTPUT._serialized_end=541
-  _GISMODULE._serialized_start=544
-  _GISMODULE._serialized_end=699
+  _OPTIMIZENETWORKOUTPUT._serialized_end=561
+  _GISMODULE._serialized_start=564
+  _GISMODULE._serialized_end=719
 # @@protoc_insertion_point(module_scope)

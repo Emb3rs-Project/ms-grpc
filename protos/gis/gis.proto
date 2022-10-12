@@ -36,5 +36,6 @@ message OptimizeNetworkOutput {
   string potential_edges = 6;
   string potential_nodes = 7;
   string selected_agents = 8;
-  string report = 9;
+  string names_dict = 9;
+  string report = 10;
 }
