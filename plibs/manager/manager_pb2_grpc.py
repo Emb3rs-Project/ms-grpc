@@ -24,6 +24,11 @@ class ManagerStub(object):
                 request_serializer=manager_dot_manager__pb2.StartCharacterizationRequest.SerializeToString,
                 response_deserializer=manager_dot_manager__pb2.StartCharacterizationResponse.FromString,
                 )
+        self.UpdateSimulation = channel.unary_unary(
+                '/manager.Manager/UpdateSimulation',
+                request_serializer=manager_dot_manager__pb2.UpdateSimulationRequest.SerializeToString,
+                response_deserializer=manager_dot_manager__pb2.UpdateSimulationResponse.FromString,
+                )
 
 
 class ManagerServicer(object):
@@ -41,6 +46,12 @@ class ManagerServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateSimulation(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ManagerServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -53,6 +64,11 @@ def add_ManagerServicer_to_server(servicer, server):
                     servicer.StartCharacterization,
                     request_deserializer=manager_dot_manager__pb2.StartCharacterizationRequest.FromString,
                     response_serializer=manager_dot_manager__pb2.StartCharacterizationResponse.SerializeToString,
+            ),
+            'UpdateSimulation': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateSimulation,
+                    request_deserializer=manager_dot_manager__pb2.UpdateSimulationRequest.FromString,
+                    response_serializer=manager_dot_manager__pb2.UpdateSimulationResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -95,5 +111,22 @@ class Manager(object):
         return grpc.experimental.unary_unary(request, target, '/manager.Manager/StartCharacterization',
             manager_dot_manager__pb2.StartCharacterizationRequest.SerializeToString,
             manager_dot_manager__pb2.StartCharacterizationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateSimulation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/manager.Manager/UpdateSimulation',
+            manager_dot_manager__pb2.UpdateSimulationRequest.SerializeToString,
+            manager_dot_manager__pb2.UpdateSimulationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

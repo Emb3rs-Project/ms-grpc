@@ -12,3 +12,13 @@ class StartSimulationRequestModel(BaseGRPC):
 class StartSimulationResponseModel(BaseGRPC):
     simulation_uuid: str = Field(default=None)
     result: Dict[str, Any] = Field(default={})
+
+
+class UpdateSimulationRequestModel(BaseGRPC):
+    simulation_uuid: str
+    simulation_metadata: dict
+    data: dict
+
+
+class UpdateSimulationResponse(BaseGRPC):
+    status: int

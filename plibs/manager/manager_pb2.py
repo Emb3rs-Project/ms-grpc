@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15manager/manager.proto\x12\x07manager\"d\n\x16StartSimulationRequest\x12\x17\n\x0fsimulation_uuid\x18\x01 \x01(\t\x12\x1b\n\x13simulation_metadata\x18\x02 \x01(\t\x12\x14\n\x0cinitial_data\x18\x03 \x01(\t\")\n\x17StartSimulationResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\"F\n\x1cStartCharacterizationRequest\x12\x11\n\tentity_id\x18\x01 \x01(\t\x12\x13\n\x0b\x65ntity_data\x18\x02 \x01(\t\"B\n\x1dStartCharacterizationResponse\x12\x11\n\tentity_id\x18\x01 \x01(\t\x12\x0e\n\x06result\x18\x02 \x01(\t2\xc7\x01\n\x07Manager\x12T\n\x0fStartSimulation\x12\x1f.manager.StartSimulationRequest\x1a .manager.StartSimulationResponse\x12\x66\n\x15StartCharacterization\x12%.manager.StartCharacterizationRequest\x1a&.manager.StartCharacterizationResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15manager/manager.proto\x12\x07manager\"d\n\x16StartSimulationRequest\x12\x17\n\x0fsimulation_uuid\x18\x01 \x01(\t\x12\x1b\n\x13simulation_metadata\x18\x02 \x01(\t\x12\x14\n\x0cinitial_data\x18\x03 \x01(\t\")\n\x17StartSimulationResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\"F\n\x1cStartCharacterizationRequest\x12\x11\n\tentity_id\x18\x01 \x01(\t\x12\x13\n\x0b\x65ntity_data\x18\x02 \x01(\t\"B\n\x1dStartCharacterizationResponse\x12\x11\n\tentity_id\x18\x01 \x01(\t\x12\x0e\n\x06result\x18\x02 \x01(\t\"]\n\x17UpdateSimulationRequest\x12\x17\n\x0fsimulation_uuid\x18\x01 \x01(\t\x12\x1b\n\x13simulation_metadata\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\t\"*\n\x18UpdateSimulationResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x32\xa0\x02\n\x07Manager\x12T\n\x0fStartSimulation\x12\x1f.manager.StartSimulationRequest\x1a .manager.StartSimulationResponse\x12\x66\n\x15StartCharacterization\x12%.manager.StartCharacterizationRequest\x1a&.manager.StartCharacterizationResponse\x12W\n\x10UpdateSimulation\x12 .manager.UpdateSimulationRequest\x1a!.manager.UpdateSimulationResponseb\x06proto3')
 
 
 
@@ -22,6 +22,8 @@ _STARTSIMULATIONREQUEST = DESCRIPTOR.message_types_by_name['StartSimulationReque
 _STARTSIMULATIONRESPONSE = DESCRIPTOR.message_types_by_name['StartSimulationResponse']
 _STARTCHARACTERIZATIONREQUEST = DESCRIPTOR.message_types_by_name['StartCharacterizationRequest']
 _STARTCHARACTERIZATIONRESPONSE = DESCRIPTOR.message_types_by_name['StartCharacterizationResponse']
+_UPDATESIMULATIONREQUEST = DESCRIPTOR.message_types_by_name['UpdateSimulationRequest']
+_UPDATESIMULATIONRESPONSE = DESCRIPTOR.message_types_by_name['UpdateSimulationResponse']
 StartSimulationRequest = _reflection.GeneratedProtocolMessageType('StartSimulationRequest', (_message.Message,), {
   'DESCRIPTOR' : _STARTSIMULATIONREQUEST,
   '__module__' : 'manager.manager_pb2'
@@ -50,6 +52,20 @@ StartCharacterizationResponse = _reflection.GeneratedProtocolMessageType('StartC
   })
 _sym_db.RegisterMessage(StartCharacterizationResponse)
 
+UpdateSimulationRequest = _reflection.GeneratedProtocolMessageType('UpdateSimulationRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATESIMULATIONREQUEST,
+  '__module__' : 'manager.manager_pb2'
+  # @@protoc_insertion_point(class_scope:manager.UpdateSimulationRequest)
+  })
+_sym_db.RegisterMessage(UpdateSimulationRequest)
+
+UpdateSimulationResponse = _reflection.GeneratedProtocolMessageType('UpdateSimulationResponse', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATESIMULATIONRESPONSE,
+  '__module__' : 'manager.manager_pb2'
+  # @@protoc_insertion_point(class_scope:manager.UpdateSimulationResponse)
+  })
+_sym_db.RegisterMessage(UpdateSimulationResponse)
+
 _MANAGER = DESCRIPTOR.services_by_name['Manager']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -62,6 +78,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _STARTCHARACTERIZATIONREQUEST._serialized_end=249
   _STARTCHARACTERIZATIONRESPONSE._serialized_start=251
   _STARTCHARACTERIZATIONRESPONSE._serialized_end=317
-  _MANAGER._serialized_start=320
-  _MANAGER._serialized_end=519
+  _UPDATESIMULATIONREQUEST._serialized_start=319
+  _UPDATESIMULATIONREQUEST._serialized_end=412
+  _UPDATESIMULATIONRESPONSE._serialized_start=414
+  _UPDATESIMULATIONRESPONSE._serialized_end=456
+  _MANAGER._serialized_start=459
+  _MANAGER._serialized_end=747
 # @@protoc_insertion_point(module_scope)
