@@ -1,29 +1,24 @@
 # Emb3rs GRPC Tools
-
 This repo is to be used to generate the required code to use in the emb3rs project, for gRPC communication.
 
-## Commands
+## Setup Local Environment
+Create Conda environment and install packages:
+```shell
+conda env create -n grpc-module -f environment-py39.yml
+conda activate grpc-module
+```
 
-Commands to generate code for the project
+## Python gRPC generation
+Create Conda environment and install packages:
+```shell
+conda run python -m grpc_tools.protoc -Iprotos/ \
+  --python_out=plibs \
+  --grpc_python_out=plibs \
+  protos/<module>/<module>.proto
+```
 
-### Python Generation
-
-
+## PHP Generation
 Requirements:
-
-- conda
-
-        $ conda env create -f environment-py310.yml
-
-- zsh or bash script (zsh example)
-
-        $ zsh -i generate_python.sh protos/manager/manager.proto
-
-
-### PHP Generation
-
-Requirements:
-
 - protoc
 - protobuf
 - protoc_php_plugin
@@ -31,17 +26,18 @@ Requirements:
 if still not enough, check at the links below for more information.
 - "https://github.com/grpc/grpc/blob/v1.45.0/src/php/README.md"
 - "https://grpc.io/docs/languages/php/quickstart/"
-
 - zsh or bash script (zsh example)
-
-        $ zsh -i generate_php.sh protos/manager/manager.proto
+  ```shell
+  . generate_php.sh protos/manager/manager.proto
+  ```
 
 ## Running tests
+Server test:
+```shell
+PYTHONPATH=$PYTHONPATH:plibs python test_server.py
+```
 
-server test
-
-        PYTHONPATH=$PYTHONPATH:plibs python test_server.py
-
-client test
-
-        PYTHONPATH=$PYTHONPATH:plibs python test_client.py
+Client test:
+```shell
+PYTHONPATH=$PYTHONPATH:plibs python test_client.py
+```
