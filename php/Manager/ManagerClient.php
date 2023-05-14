@@ -44,4 +44,18 @@ class ManagerClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Manager\UpdateSimulationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function UpdateSimulation(\Manager\UpdateSimulationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/manager.Manager/UpdateSimulation',
+        $argument,
+        ['\Manager\UpdateSimulationResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
